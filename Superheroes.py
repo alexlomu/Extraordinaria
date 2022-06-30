@@ -144,3 +144,11 @@ class Superheroes():
                 raise ValueError("The parameter health_to_be_set should be > 0 and <= 1000.")
         else:
             raise TypeError("The parameter health_to_be_set should be a int.")
+
+    def is_alive(self):
+        
+        return not bool(self.health == 0)
+
+    def die(self):
+        self.health = 0
+        return self.health

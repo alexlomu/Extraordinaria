@@ -43,5 +43,77 @@ class Organizacion():
         else:
             raise TypeError("The parameter defense_rating should be a list.")
 
+    def __str__(self):
+        
+        human_readable_string = ("La organización" + str(self.nombre) +
+                                 " con los superheroes " + str(self.superheroes) +
+                                 " con la salud " + str(self.salud) +
+                                 " con el ataque " + str(self.ataque) +
+                                 " con la defensa " + str(self.defensa))
 
+        return human_readable_string
+
+    def get_nombre(self):
+        
+        return self.nombre
+
+
+    def get_superheroes(self):
+        
+        return self.superheroes
+
+
+    def get_salud(self):
+        
+        return self.salud
+
+
+    def get_ataque(self):
+        
+        return self.ataque
+
+
+    def get_defensa(self):
+        
+
+        return self.defensa
+
+    def set_nombre(self, organization_name_to_be_set):
+        
+        if isinstance(organization_name_to_be_set, str):
+            self.nombre = organization_name_to_be_set
+        else:
+            raise TypeError("The parameter organization_name_to_be_set should be a String.")
+
+
+    def set_arma(self, superheroe_type_to_be_set):
+        
+        if isinstance(superheroe_type_to_be_set, list):
+            self.arma = superheroe_type_to_be_set
+        else:
+            raise TypeError("The parameter superheroe_type_to_be_set should be a list.")
+
+
+    def set_ataque(self, ataque_to_be_set):
+      
+        if isinstance(ataque_to_be_set, list):
+            for i in ataque_to_be_set:
+                if 1 <= ataque_to_be_set[i] <= 10:
+                    self.ataque = ataque_to_be_set
+                else:
+                    raise ValueError("The parameters in attack_rating_to_be_set should be > 0 and <= 10.")
+        else:
+            raise TypeError("The parameter attack_rating_to_be_set should be a list.")
+
+
+    def set_defensa(self, defensa_to_be_set):
+        
+        if isinstance(defensa_to_be_set, list):
+            for i in defensa_to_be_set:
+                if 1 <= defensa_to_be_set[i] <= 10:
+                    self._defensa = defensa_to_be_set
+                else:
+                    raise ValueError("The parameters in defense_rating_to_be_set should be > 0 and <= 10.")
+        else:
+            raise TypeError("The parameter defense_rating_to_be_set should be a list.")
 

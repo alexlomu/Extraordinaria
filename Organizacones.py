@@ -117,3 +117,14 @@ class Organizacion():
         else:
             raise TypeError("The parameter defense_rating_to_be_set should be a list.")
 
+    def is_undefeated(self):
+        for i in self.salud:
+            if self.salud== 0:
+                var = True
+            else:
+                var = False
+        return not bool(var)
+
+    def surrender(self):
+        for i in self.salud:
+            self.salud[i] == 0

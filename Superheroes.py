@@ -115,7 +115,7 @@ class Superheroes():
 
     def set_type(self, type_to_be_set):
         
-        if isinstance(type_to_be_set, types):
+        if isinstance(type_to_be_set, tipos.types):
             self.type = type_to_be_set
         else:
             raise TypeError("The parameter type should be in types.")

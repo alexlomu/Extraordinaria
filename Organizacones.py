@@ -6,40 +6,23 @@ class Organizacion():
             raise TypeError("The parameter organizacion_name should be a String.")
 
         if isinstance(superheroes, list):
-            for i in superheroes:
-                if isinstance(superheroes[i], str):
-                    self.superheroes = superheroes
-                else:
-                    raise TypeError("The parameters in superheroes should be strings.")
-                if superheroes == "":
-                    print("Debe haber mínimo un superheroe en la organización.")
+            self.superheroes = superheroes
         else:
             raise TypeError("The parameter organizacion_superheroes should be a list.")
         
         if isinstance(salud, list):
-            for i in salud:
-                if 1 <= salud[i] <= 100:
-                    self.salud = salud
-                else:
-                    raise ValueError("The parameters in health_points should be > 0 and <= 100.")
+            self.salud =salud
+
         else:
             raise TypeError("The parameter health_points should be a list.")
 
         if isinstance(ataque, list):
-            for i in ataque:
-                if 1 <= ataque[i] <= 10:
-                    self.ataque = ataque
-                else:
-                    raise ValueError("The parameters in attack_rating should be > 0 and <= 10.")
+            self.ataque = ataque
         else:
             raise TypeError("The parameter attack_rating should be a list.")
 
         if isinstance(defensa, list):
-            for i in defensa:
-                if 1 <= defensa[i] <= 10:
-                    self.defensa = defensa
-            else:
-                raise ValueError("The parameters in defense_rating should be > 0 and <= 10.")
+            self.defensa = defensa
         else:
             raise TypeError("The parameter defense_rating should be a list.")
 
@@ -86,10 +69,10 @@ class Organizacion():
             raise TypeError("The parameter organization_name_to_be_set should be a String.")
 
 
-    def set_arma(self, superheroe_type_to_be_set):
+    def set_superheroe(self, superheroe_type_to_be_set):
         
         if isinstance(superheroe_type_to_be_set, list):
-            self.arma = superheroe_type_to_be_set
+            self.superheroes = superheroe_type_to_be_set
         else:
             raise TypeError("The parameter superheroe_type_to_be_set should be a list.")
 
@@ -129,37 +112,6 @@ class Organizacion():
         for i in self.salud:
             self.salud[i] == 0
 
-def prueba():
-    
-    print("=================================================================.")
-    print("Test Case 1: Create an Oganization.")
-    print("=================================================================.")
-    
-    organizacion_1 = Organizacion("Avengers", ["IronMan", "Capitán América", "Thor"], [100, 200, 500], [8, 7, 9], [7, 7, 10])
 
-    if organizacion_1.get_nombre() == "Avengers":
-        print("Test PASS. The parameter organization_name has been correctly set.")
-    else:
-        print("Test FAIL. Check the method __init__().")
+organizacion_1 = Organizacion("Avengers", ["IronMan", "Capitán América", "Thor"], [100, 200, 500], [8, 7, 9], [7, 7, 10])
 
-    if organizacion_1.get_superheroes() == ["IronMan", "Capitán América", "Thor"]:
-        print("Test PASS. The parameter superheroes has been correctly set.")
-    else:
-        print("Test FAIL. Check the method __init__().")
-
-    if organizacion_1.get_salud() == [100, 200, 500]:
-        print("Test PASS. The parameter health_points has been correctly set.")
-    else:
-        print("Test FAIL. Check the method __init__().")
-
-    if organizacion_1.get_ataque() == [8, 7, 9]:
-        print("Test PASS. The parameter attack_rating has been correctly set.")
-    else:
-        print("Test FAIL. Check the method __init__().")
-
-    if organizacion_1.get_defensa() == [7, 7, 10]:
-        print("Test PASS. The parameter defense_rating has been correctly set.")
-    else:
-        print("Test FAIL. Check the method __init__().")
-
-prueba()

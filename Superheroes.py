@@ -49,3 +49,6 @@ class Superheroes():
                 raise ValueError("The parameter health_points should be > 0 and <= 1000.")
         else:
             raise TypeError("The parameter health_points should be a int.")
+
+    def __del__(self):
+         Superheroes.lista_ids.remove(self.id)
